@@ -806,28 +806,30 @@ void DesenhaInimigos(INIMIGOS inimigos[], int tamanho) {
             } else {
                 al_draw_bitmap(laranja, inimigos[i].x, inimigos[i].y, 0);
                 
-                // Indicador visual para inimigos especiais
-                if (inimigos[i].tipo == 1) {
-                    // Inimigo rápido - borda vermelha
-                    al_draw_rectangle(inimigos[i].x, inimigos[i].y, 
-                                    inimigos[i].x + inimigos[i].borda_x, 
-                                    inimigos[i].y + inimigos[i].borda_y, 
-                                    al_map_rgb(255, 0, 0), 2);
-                } else if (inimigos[i].tipo == 2) {
-                    // Inimigo resistente - borda dourada
-                    al_draw_rectangle(inimigos[i].x, inimigos[i].y, 
-                                    inimigos[i].x + inimigos[i].borda_x, 
-                                    inimigos[i].y + inimigos[i].borda_y, 
-                                    al_map_rgb(255, 215, 0), 3);
-                    
-                    // Mostra vida do inimigo resistente
-                    for (int v = 0; v < inimigos[i].vida; v++) {
-                        al_draw_filled_circle(inimigos[i].x + 10 + (v * 8), 
-                                            inimigos[i].y - 5, 3, al_map_rgb(255, 0, 0));
+                // Indicador visual para inimigos especiais (apenas quando ativos)
+                if (inimigos[i].ativo) {
+                    if (inimigos[i].tipo == 1) {
+                        // Inimigo rápido - borda vermelha
+                        al_draw_rectangle(inimigos[i].x, inimigos[i].y, 
+                                        inimigos[i].x + inimigos[i].borda_x, 
+                                        inimigos[i].y + inimigos[i].borda_y, 
+                                        al_map_rgb(255, 0, 0), 2);
+                    } else if (inimigos[i].tipo == 2) {
+                        // Inimigo resistente - borda dourada
+                        al_draw_rectangle(inimigos[i].x, inimigos[i].y, 
+                                        inimigos[i].x + inimigos[i].borda_x, 
+                                        inimigos[i].y + inimigos[i].borda_y, 
+                                        al_map_rgb(255, 215, 0), 3);
+                        
+                        // Mostra vida do inimigo resistente
+                        for (int v = 0; v < inimigos[i].vida; v++) {
+                            al_draw_filled_circle(inimigos[i].x + 10 + (v * 8), 
+                                                inimigos[i].y - 5, 3, al_map_rgb(255, 0, 0));
+                        }
                     }
                 }
                 
-                // Indicador de trincheira invadida
+                // Indicador de trincheira invadida (apenas quando na trincheira)
                 if (inimigos[i].na_trincheira) {
                     al_draw_filled_rectangle(inimigos[i].x, inimigos[i].y, 
                                            inimigos[i].x + inimigos[i].borda_x, 
