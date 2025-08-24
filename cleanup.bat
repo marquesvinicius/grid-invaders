@@ -26,31 +26,27 @@ del /q compile.bat 2>nul
 del /q Makefile 2>nul
 del /q jogoteste.sln 2>nul
 
-REM Arquivos de áudio duplicados/antigos
+REM Arquivos de áudio duplicados/antigos (MANTENDO OS ESSENCIAIS!)
 del /q trilha_sonora3.WAV 2>nul
-del /q trilha_sonora2.OGG 2>nul
-del /q trilha_sonora.ogg 2>nul
 del /q trilha_sonora_old.ogg 2>nul
 del /q grid-invaders-src\trilha_sonora3.WAV 2>nul
-del /q grid-invaders-src\trilha_sonora2.OGG 2>nul
 del /q grid-invaders-src\trilha_sonora_old.ogg 2>nul
-del /q Debug\trilha_sonora.ogg 2>nul
+REM NÃO deletar trilha_sonora.ogg e trilha_sonora2.OGG - são essenciais!
+REM NÃO deletar laser.wav - é essencial!
 
-REM Imagens não utilizadas
+REM Imagens não utilizadas (MANTENDO AS ESSENCIAIS!)
 del /q ex.png 2>nul
-del /q bala.png 2>nul
 del /q Image.bmp 2>nul
 del /q spacespace.png 2>nul
 del /q grid-invaders-src\ex.png 2>nul
-del /q grid-invaders-src\bala.png 2>nul
 del /q grid-invaders-src\Image.bmp 2>nul
 del /q grid-invaders-src\Image.png 2>nul
 del /q grid-invaders-src\Image1.bmp 2>nul
 del /q grid-invaders-src\Image1.png 2>nul
 del /q grid-invaders-src\Image2.png 2>nul
 del /q Debug\ex.png 2>nul
-del /q Debug\bala.png 2>nul
 del /q Debug\Image.bmp 2>nul
+REM NÃO deletar bala-1.png, laranja.png, azul.png, fotonave.png - são essenciais!
 
 REM Screenshots
 del /q grid-invaders-src\Screenshot_1.png 2>nul
@@ -85,13 +81,18 @@ echo Arquivos removidos:
 echo - Logs de debug
 echo - Arquivos objeto temporarios
 echo - Scripts antigos e duplicados
-echo - Arquivos de audio duplicados
-echo - Imagens nao utilizadas
+echo - Arquivos de audio duplicados (mantendo trilha_sonora.ogg e laser.wav)
+echo - Imagens nao utilizadas (mantendo bala-1.png, laranja.png, azul.png, fotonave.png)
 echo - Screenshots desnecessarios
 echo - Arquivos de codigo antigos
 echo - Arquivos ZIP e pastas extras
 echo - Arquivos de debug do Visual Studio
 echo.
-echo Espaco liberado: aproximadamente 150MB
+echo Arquivos ESSENCIAIS preservados:
+echo - trilha_sonora.ogg (musica de fundo)
+echo - laser.wav (som do tiro)
+echo - bala-1.png, laranja.png, azul.png, fotonave.png (sprites do jogo)
+echo.
+echo Espaco liberado: aproximadamente 100MB
 echo.
 pause
