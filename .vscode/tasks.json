@@ -1,0 +1,55 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-o",
+                "grid-invaders.exe",
+                "grid-invaders-src/main.c",
+                "-Ipackages/Allegro.5.2.6/build/native/include",
+                "-Lpackages/Allegro.5.2.6/build/native/v142/win32/lib",
+                "-lallegro-debug",
+                "-lallegro_main-debug",
+                "-lallegro_image-debug",
+                "-lallegro_font-debug",
+                "-lallegro_ttf-debug",
+                "-lallegro_primitives-debug",
+                "-lallegro_audio-debug",
+                "-lallegro_acodec-debug",
+                "-lallegro_physfs-debug",
+                "-lallegro_dialog-debug",
+                "-lallegro_memfile-debug",
+                "-lallegro_color-debug",
+                "-lallegro_video-debug",
+                "-w"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "del",
+            "args": ["grid-invaders.exe"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        }
+    ]
+}

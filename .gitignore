@@ -1,0 +1,21 @@
+# Build
+Debug/
+Release/
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.log
+*.tlog/
+
+# IDE / VS
+*.user
+jogoteste.vcxproj.user
+
+# NuGet cache
+packages/
+!packages.config
+
+# Outras
+*.zip
+allegro.log
